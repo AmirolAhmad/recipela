@@ -30,15 +30,15 @@
 				
 				<nav class="foot-nav">
 					<ul>
-						<li><a href="" title="Recipes">About</a></li>
+						<li><%= link_to 'About', about_path %></li>
 						<li><a href="blog.html" title="Blog">Blog</a></li>
-						<li><a href="" title="Recipes">Privacy Policy</a></li>
-						<li><a href="" title="Recipes">Terms & Conditions</a></li>
-						<li><a href="" title="Recipes">Cookies</a></li>
-						<li><a href="" title="Recipes">Advertising</a></li>
-						<li><a href="" title="Recipes">Developers</a></li>
-						<li><a href="" title="Recipes">Help</a></li>
-						<li><a href="contact.html" title="Contact">Contact</a></li>
+						<li><%= link_to 'Privacy Policy', privacy_path %></li>
+						<li><%= link_to 'Terms & Conditions', terms_path %></li>
+						<li><%= link_to 'Cookies', cookies_path %></li>
+						<li><%= link_to 'Advertising', advertising_path %></li>
+						<li><%= link_to 'Developers', developers_path %></li>
+						<li><%= link_to 'Help', help_path %></li>
+						<li><%= link_to 'Contact', contact_path %></li>
 						<% if user_signed_in? %>
 						<li>
 							<%= link_to 'Logout', destroy_user_session_path, method: :delete %>
