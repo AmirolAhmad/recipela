@@ -51,6 +51,7 @@ gem 'jquery-turbolinks'
 gem 'email_validator'
 gem 'asset_sync'
 gem 'sidekiq'
+gem 'paranoia'
 
 group :development, :test do
   gem 'rspec'
