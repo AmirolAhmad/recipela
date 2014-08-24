@@ -1,0 +1,7 @@
+<% routes = ['root_path'] %>
+<script>
+  window.Routes = {};
+  <% routes.each do |route| %>
+  window.Routes.<%= route %> = '<%= instance_eval(route) %>';
+  <% end %>
+</script>

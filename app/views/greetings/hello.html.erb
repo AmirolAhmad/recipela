@@ -1,2 +1,19 @@
+<% content_for :title do %>
+	<%= "#{META_TAGS['home']['page_title']}" %>
+<% end %>
+<% content_for :meta_tags do %>
+	<%= render :partial => 'application/meta_tags',
+             :locals => {
+             :type => "website",
+             :title => "#{META_TAGS['home']['meta_title']}",
+             :url => request.url,
+             :description => "#{META_TAGS['home']['meta_description']}",
+             :canonical => request.url,
+             :og_title => "#{META_TAGS['home']['og_title']}",
+             :og_description => "#{META_TAGS['home']['og_description']}",
+             :og_image => asset_url("logo-large.png")
+             } %>
+<% end %>
+
 <h1>Greetings#hello</h1>
 <p>Find me in app/views/greetings/hello.html.erb</p>
