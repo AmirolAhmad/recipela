@@ -7,6 +7,7 @@
 
 	<title><%= (title = yield :title).blank? ? "RecipeLa" : title %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link href="http://fonts.googleapis.com/css?family=Raleway:400,300,500,600,700,800" rel="stylesheet">
   <%= render 'routes' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -18,7 +19,10 @@
 
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
-<%= yield %>
+  <%= render partial: "header" %>
+  <%= yield %>
+
+  <%= render partial: 'footer' %>
 
 </body>
 

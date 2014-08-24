@@ -15,11 +15,180 @@
              } %>
 <% end %>
 
-<h1>Greetings#hello</h1>
-<p>Find me in app/views/greetings/hello.html.erb</p>
+<!--main-->
+<main class="main" role="main">
+  <!--intro-->
+  <div class="intro">
+    <figure class="bg"><%= image_tag('intro.jpg', :alt => 'Introduction')%></figure>
+    
+    <!--wrap-->
+    <div class="wrap clearfix">
+      <!--row-->
+      <div class="row">
+        <article class="three-fourth text wow zoomIn" data-wow-delay=".2s">
+          <h1>Welcome to RecipeLa!</h1>
+          <p>RecipeLa is the ultimate <strong>cooking social community</strong>, where recipes come to life. Wanna know what you will gain by joining us? Lorem ipsum dolor sit amet, this is some teaser text.</p>
+          <p>You will win awesome prizes, make new friends and share delicious recipes. </p>
+          <%= link_to 'Join our community', register_path, :class => 'button white more medium' %>
+          <p>Already a member? Click <%= link_to 'here', login_path %> to login.</p>
+        </article>
+            
+        <!--search recipes widget-->
+        <div class="one-fourth wow fadeInDown" data-wow-delay=".5s">
+          <div class="widget container">
+            <div class="textwrap">
+              <h3>Search for recipes</h3>
+              <p>All you need to do is enter an igredient, a dish or a keyword. </p>
+              <p>You can also select a specific category from the dropdown.</p>
+              <p>There’s sure to be something tempting for you to try.</p> 
+              <p>Enjoy!</p>
+            </div>
+            <form action="http://www.themeenergy.com/themes/html/social-chef/find_recipe.html">
+              <div class="f-row">
+                <input type="text" placeholder="Enter your search term" />
+              </div>
+              <div class="f-row">
+                <select>
+                  <option>or select a category</option>
+                  <option>Apetizers</option>
+                  <option>Cocktails</option>
+                  <option>Deserts</option>
+                  <option>Main courses</option>
+                  <option>Snacks</option>
+                  <option>Soups</option>
+                </select>
+              </div>
+              <div class="f-row bwrap">
+                <input type="submit" value="Start cooking!" />
+              </div>
+            </form>
+          </div>
+        </div>
+        <!--//search recipes widget-->
+      </div>
+      <!--//row-->
+    </div>
+    <!--//wrap-->
+  </div>
+  <!--//intro-->
+      
+  <!--wrap-->
+  <div class="wrap clearfix">
+    <!--row-->
+    <div class="row">
+      <!--content-->
+      <section class="content full-width">
+        <div class="icons dynamic-numbers">
+          <header class="s-title wow fadeInDown">
+            <h2 class="ribbon large">RecipeLa in numbers</h2>
+          </header>
+          
+          <!--row-->
+          <div class="row wow fadeInUp">
+            <!--item-->
+            <div class="one-sixth">
+              <div class="container">
+                <i class="ico i-members"></i>
+                <span class="title dynamic-number" data-dnumber="1730">0</span>
+                <span class="subtitle">members</span>
+              </div>
+            </div>
+            <!--//item-->
+                
+            <!--item-->
+            <div class="one-sixth">
+              <div class="container">
+                <i class="ico i-recipes"></i>
+                <span class="title dynamic-number" data-dnumber="1250">0</span>
+                <span class="subtitle">recipes</span>
+              </div>
+            </div>
+            <!--//item-->
+                
+            <!--item-->
+            <div class="one-sixth">
+              <div class="container">
+                <i class="ico i-photos"></i>
+                <span class="title dynamic-number" data-dnumber="5300">0</span>
+                <span class="subtitle">photos</span>
+              </div>
+            </div>
+            <!--//item-->
+                
+            <!--item-->
+            <div class="one-sixth">
+              <div class="container">
+                <i class="ico i-posts"></i>
+                <span class="title dynamic-number" data-dnumber="2300">0</span>
+                <span class="subtitle">forum posts</span>
+              </div>
+            </div>
+            <!--//item-->
+                
+            <!--item-->
+            <div class="one-sixth">
+              <div class="container">
+                <i class="ico i-comment"></i>
+                <span class="title dynamic-number" data-dnumber="7400">0</span>
+                <span class="subtitle">comments</span>
+              </div>
+            </div>
+            <!--//item-->
+                
+            <!--item-->
+            <div class="one-sixth">
+              <div class="container">
+                <i class="ico i-articles"></i>
+                <span class="title dynamic-number" data-dnumber="1700">0</span>
+                <span class="subtitle">articles</span>
+              </div>
+            </div>
+            <!--//item-->
+          
+            <div class="cta">
+              <%= link_to 'Join us!', register_path, :class => 'button big' %>
+            </div>
+          </div>
+          <!--//row-->
+        </div>
+      </section>
+      <!--//content-->
+    </div>
+  </div>
+</main>
+<!--//main-->
 
-<% if user_signed_in? %>
-<%= link_to 'Logout', destroy_user_session_path, method: :delete %>
-<% else %>
-<%= link_to 'Login', new_user_session_path %> | <%= link_to 'Register', new_user_registration_path %>
-<% end %>
+<script>
+  window.dynamicNumbersBound = false;
+  var wow = new WOW();
+  WOW.prototype.show = function(box) {
+    wow.applyStyle(box);
+    if (typeof box.parentNode !== 'undefined' && hasClass(box.parentNode, 'dynamic-numbers') && !window.dynamicNumbersBound) {
+      bindDynamicNumbers();
+      window.dynamicNumbersBound = true;
+    }
+    return box.className = "" + box.className + " " + wow.config.animateClass;
+  };
+  wow.init();
+  
+  function hasClass(element, cls) {
+    return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
+  }
+  
+  function bindDynamicNumbers() {
+    $('.dynamic-number').each(function() {        
+      var startNumber = $(this).text();
+      var endNumber = $(this).data('dnumber');
+      var dynamicNumberControl = $(this);
+      
+      $({numberValue: startNumber}).animate({numberValue: endNumber}, {
+        duration: 4000,
+        easing: 'swing',
+        step: function() { 
+          $(dynamicNumberControl).text(Math.ceil(this.numberValue)); 
+        }
+      });
+    }); 
+  }
+  
+</script>
