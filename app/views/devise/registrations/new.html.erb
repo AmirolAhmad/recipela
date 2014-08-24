@@ -12,9 +12,11 @@
 					<%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:multipart => true}) do |f| %>
 
 					<div class="f-row">
+						<p>Profile Picture : 
 						<%= f.label :avatar do %>
-						<%= f.file_field :avatar  %>
-						<%= f.hidden_field :avatar_cache %>
+							<%= f.file_field :avatar  %>
+							<%= f.hidden_field :avatar_cache %>
+						<% end %></p>
 					</div>
 
 					<div class="f-row">
