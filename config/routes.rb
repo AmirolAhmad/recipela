@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'recipes/index'
+
   root to: 'greetings#hello'
   get 'about', to: "greetings#about"
   get 'terms', to: "greetings#terms"
@@ -15,4 +17,6 @@ Rails.application.routes.draw do
     get "login", to: "devise/sessions#new"
     get "register", to: "devise/registrations#new"
   end
+
+  resources :recipes, only: [:index]
 end
