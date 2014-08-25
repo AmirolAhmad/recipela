@@ -7,37 +7,14 @@
     <nav class="main-nav" role="navigation" id="menu">
       <ul>
         <li class="<%= 'current-menu-item' if current_page?(root_path) %>">
-          <%= link_to root_path, :title => "home" do %>
+          <%= link_to root_path, :title => "Home" do %>
             <span>Home</span>
           <% end %>
         </li>
-        <li><a href="recipes.html" title="Recipes"><span>Recipes</span></a>
-          <ul>
-            <li><a href="recipes2.html" title="Recipes 2">Recipes 2</a></li><li><a href="recipe.html" title="Recipe">Recipe</a></li>
-          </ul>
-        </li>
-        <li><a href="blog.html" title="Blog"><span>Blog</span></a>
-          <ul>
-            <li><a href="blog_single.html" title="Blog post">Blog post</a></li>
-          </ul>
-        </li>
-        <li><a href="#" title="Pages"><span>Pages</span></a>
-          <ul>
-            <li><a href="left_sidebar.html" title="Left sidebar page">Left sidebar page</a></li>
-            <li><a href="right_sidebar.html" title="Right sidebar page">Right sidebar page</a></li>
-            <li><a href="two_sidebars.html" title="Both sidebars page">Both sidebars page</a></li>
-            <li><a href="full_width.html" title="Full width page">Full width page</a></li>
-            <li><a href="login.html" title="Login page">Login page</a></li><li><a href="register.html" title="Register page">Register page</a></li>
-            <li><a href="error404.html" title="Error page">Error page</a></li>
-          </ul>
-        </li>
-        <li><a href="#" title="Features"><span>Features</span></a>
-          <ul>
-            <li><a href="animations.html" title="Animations">Animations</a></li>
-            <li><a href="grid.html" title="Grid">Grid</a></li>
-            <li><a href="shortcodes.html" title="Shortcodes">Shortcodes</a></li>
-            <li><a href="pricing.html" title="Pricing tables">Pricing tables</a></li>
-          </ul>
+        <li>
+          <%= link_to recipes_path, :title => "Recipes" do %>
+          <span>Recipes</span>
+          <% end %>
         </li>
       </ul>
     </nav>

@@ -18,5 +18,5 @@ Rails.application.routes.draw do
     get "register", to: "devise/registrations#new"
   end
 
-  resources :recipes, only: [:index]
+  resources :recipes, only: [:index, :show]
 end

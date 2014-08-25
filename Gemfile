@@ -52,6 +52,7 @@ gem 'email_validator'
 gem 'asset_sync'
 gem 'sidekiq'
 gem 'paranoia'
+gem 'will_paginate'
 
 group :development, :test do
   gem 'rspec'
