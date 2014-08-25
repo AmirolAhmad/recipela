@@ -20,7 +20,12 @@
 			<aside class="above-sidebar full-width  wow fadeInDown">
 				<ul class="boxed">
 					<% Category.all.each do |ch| %>
-		               <li class="light"><%= link_to ch.name, recipes_path(sort: ch.name.downcase) %></li>
+		               <li class="medium">
+		               	<%= link_to recipes_path(sort: ch.name.downcase) do %>
+		               	<i class="ico i-asian"></i>
+		               	<span><%= ch.name %></span>
+		               	<% end %>
+		               </li>
 		            <% end %>
 		        </ul>
 		    </aside>
@@ -73,7 +78,10 @@
 							<h2><%= link_to recipe.title, recipe_path(recipe) %></h2>
 							<div class="actions">
 								<div>
-									<div class="difficulty"><i class="ico i-medium"></i><a href="#">medium</a></div>
+									<div class="difficulty">
+										<i class="ico i-hard"></i>
+										<%= recipe.difficulty.name %>
+									</div>
 									<div class="likes"><i class="ico i-likes"></i><a href="#">10</a></div>
 									<div class="comments"><i class="ico i-comments"></i><a href="recipe.html#comments">27</a></div>
 								</div>

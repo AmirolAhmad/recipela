@@ -7,7 +7,7 @@
 			<ul>
 				<li><%= link_to "Home", root_path, :title => "Home" %></li>
 				<li><%= link_to "Recipe", recipes_path, :title => "Recipes" %></li>
-				<li><a href="#" title="Cocktails">Deserts</a></li>
+				<li><%= link_to @recipes.category.name %></li>
 				<li><%= link_to @recipes.title, recipe_path %></li>
 			</ul>
 		</nav>
