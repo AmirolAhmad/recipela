@@ -1,9 +1,13 @@
 class Recipe < ActiveRecord::Base
 	acts_as_paranoid #https://github.com/radar/paranoia
+	
 	extend FriendlyId
+	
 	friendly_id :title, use: [:slugged, :finders, :history]
 
 	belongs_to :user
+	belongs_to :category
+	belongs_to :difficulty
 
 	validates_presence_of :user_id
 

@@ -47,14 +47,14 @@
 								<dt>Cooking time</dt>
 								<dd><%= @recipes.cooking_time %> mins</dd>
 								<dt>Difficulty</dt>
-								<dd>easy</dd>
+								<dd><%= @recipes.difficulty.name %></dd>
 								<dt>Serves</dt>
 								<dd><%= @recipes.serves %> people</dd>
 							</dl>
 							
 							<dl class="user">
 								<dt>Category</dt>
-								<dd>Deserts</dd>
+								<dd><%= @recipes.category.name %></dd>
 								<dt>Posted by</dt>
 								<dd><%= @recipes.user.email %></dd>
 							</dl>
