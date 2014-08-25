@@ -16,6 +16,14 @@
 			<header class="s-title wow fadeInLeft">
 				<h1>Recipes</h1>
 			</header>
+
+			<aside class="above-sidebar full-width  wow fadeInDown">
+				<ul class="boxed">
+					<% Category.all.each do |ch| %>
+		               <li class="light"><%= link_to ch.name, recipes_path(sort: ch.name.downcase) %></li>
+		            <% end %>
+		        </ul>
+		    </aside>
 			
 			<aside class="above-sidebar full-width  wow fadeInDown">
 				<ul class="boxed">

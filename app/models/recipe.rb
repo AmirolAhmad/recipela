@@ -11,12 +11,13 @@ class Recipe < ActiveRecord::Base
 
 	validates_presence_of :user_id
 
-	# self.per_page = 10
+	self.per_page = 10
 
 	default_scope -> { order('`recipes`.created_at DESC') }
 	scope :published, -> { where('status = ?', 'published').unscope(:order).order('`recipes`.published_at DESC') }
 	scope :featured, -> { where(featured: true) }
 	scope :published_only, -> { published.where('featured IS NOT TRUE') }
+	scope :by_category, -> (category_id) { where(category_id: category_id) }
 
 	scope :random_recipe, -> { order('RAND()').limit(4) }
 
