@@ -3,7 +3,7 @@ class Category < ActiveRecord::Base
 	validates :name, presence: true, uniqueness: true, length: {maximum: 50}
 	acts_as_url :name, url_attribute: :slug
 
-	default_scope -> { order('id DESC')}
+	default_scope -> { order('id ASC')}
 
 	def as_json(options = {})
     options = {} if options.blank?
