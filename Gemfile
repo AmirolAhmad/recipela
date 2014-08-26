@@ -53,6 +53,7 @@ gem 'asset_sync'
 gem 'sidekiq'
 gem 'paranoia'
 gem 'kaminari'
+gem 'will_paginate'
 
 group :development, :test do
   gem 'rspec'
