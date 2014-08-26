@@ -1,3 +1,20 @@
+<% content_for :title do %>
+  <%= "#{@recipe.try(:title)}" %>
+<% end %>
+<% content_for :meta_tags do %>
+  <%= render :partial => 'application/meta_tags',
+             :locals => {
+                  :type => "website",
+                  :title => "#{@recipe.try(:title)}",
+                  :url => request.url,
+                  :description => "#{@recipe.try(:description)}",
+                  :canonical => request.url,
+                  :og_title => "#{@recipe.try(:title)}",
+                  :og_description => "#{@recipe.try(:description)}",
+                  :og_image => asset_url("logo-large.png")
+             } %>
+<% end %>
+
 <!--main-->
 <main class="main" role="main">
 	<!--wrap-->

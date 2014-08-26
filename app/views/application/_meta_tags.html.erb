@@ -5,15 +5,15 @@
 <% og_image ||= "" %>
 
 <!-- need to change -->
-<% image_url ||= image_path('worldcup-favicon.png') %>
+<% image_url ||= image_path('recipela-favicon.png') %>
 <meta property="og:type" content="<%= !og_type.blank? ? og_type : 'website'%>" />
 <meta property="og:title" content="<%= !og_title.blank? ? og_title : title %>"/>
 <meta property="og:url" content="<%= !og_url.blank? ? og_url : request.url %>"/>
 <meta property="og:image" content="<%= !og_image.blank? ? og_image : image_url('logo-large.png') %>"/>
 <meta property="og:description" content="<%= !og_description.blank? ? og_description : description %>" />
-<meta property="og:site_name" content="recipela.com"/>
+<meta property="og:site_name" content="RecipeLa | Cooking Social Community"/>
 <meta name="title" content="<%= title %>"/>
 <meta name="description" content="<%= description %>" />
 <link rel="canonical" href="<%= canonical %>" />
 <!-- need to change -->
-<%= favicon_link_tag image_path('worldcup-favicon.png') %>
+<%= favicon_link_tag image_path('recipela-favicon.png') %>

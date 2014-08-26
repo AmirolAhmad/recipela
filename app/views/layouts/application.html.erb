@@ -15,7 +15,7 @@
   <%= yield :meta_tags %>
   <%= render "analytics" %>
 </head>
-<body class="<%= body_class %>" data-user="<%= raw current_user.try(:to_json) %>">
+<body class="<%= body_class %>" data-user="<%= h current_user.try(:to_json) %>">
 
   <%= render partial: "header" %>
   <p class="notice"><%= notice %></p>

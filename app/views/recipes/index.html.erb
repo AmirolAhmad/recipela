@@ -1,3 +1,20 @@
+<% content_for :title do %>
+  <%= "#{META_TAGS['recipes']['page_title']}" %>
+<% end %>
+<% content_for :meta_tags do %>
+  <%= render :partial => 'application/meta_tags',
+             :locals => {
+                  :type => "website",
+                  :title => "#{META_TAGS['recipes']['meta_title']}",
+                  :url => request.url,
+                  :description => "#{META_TAGS['recipes']['meta_description']}",
+                  :canonical => request.url,
+                  :og_title => "#{META_TAGS['recipes']['og_title']}",
+                  :og_description => "#{META_TAGS['recipes']['og_description']}",
+                  :og_image => asset_url("logo-large.png")
+             } %>
+<% end %>
+
 <!--main-->
 <main class="main" role="main">
 	<!--wrap-->
